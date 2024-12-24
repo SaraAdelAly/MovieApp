@@ -1,0 +1,12 @@
+<header>
+    <nav>
+      <h1>Movie App</h1>
+      <ul >
+          <li *ngIf="authService.isAuthenticated()"><a routerLink="/admin-login" >Admin</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a routerLink="/home">User</a></li>
+         <li *ngIf="authService.isAuthenticated()"> <a (click)="logout()">Log Out</a></li>
+        <li  *ngIf="!authService.isAuthenticated()"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!authService.isAuthenticated()"> <a routerLink="/register">Register</a></li>
+      </ul>
+    </nav>
+  </header>

@@ -1,0 +1,16 @@
+  <div *ngIf="movieDetails">
+    <h1>{{ movieDetails.title }}</h1>
+    <p>{{ movieDetails.description }}</p>
+    <p><strong>Genre:</strong> {{ movieDetails.genre }}</p>
+    <p><strong>Rating:</strong> {{ movieDetails.imdbRating }}</p>
+    <button class="back-button" (click)="goBack()">Back</button>
+  </div>
+  
+  <div *ngIf="!movieDetails && !errorMessage">
+    <p>Loading movie details...</p>
+  </div>
+  
+  <div *ngIf="errorMessage">
+    <p class="text-danger">{{ errorMessage }}</p>
+  </div>
+  

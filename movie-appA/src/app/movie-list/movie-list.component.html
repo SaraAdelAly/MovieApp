@@ -1,0 +1,26 @@
+<!-- <div class="movie-list-container">
+    <div *ngFor="let movie of movies" class="movie-card">
+        <h2>
+            <a [routerLink]="['/movie-detail', movie.id]" class="movie-title">
+                {{movie.title}}
+            </a>
+        </h2>
+        <p><strong>Year:</strong> {{movie.yearOfCreation}}</p>
+        <p><strong>Genre:</strong> {{movie.genre}}</p>
+        <p><strong>IMDB Rating:</strong> {{movie.imdbRating}}</p>
+        <p><strong>Description:</strong> {{movie.description}}</p>
+        <button class="details-button" [routerLink]="['/movie-detail', movie.id]">
+            View Details
+        </button>
+    </div>
+</div>
+
+<div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 0">Previous</button>
+    <button *ngFor="let page of getPages()" 
+            (click)="onPageChange(page)" 
+            [class.active]="page === currentPage">
+        {{page + 1}}
+    </button>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages - 1">Next</button>
+</div> -->

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Search OMDB Movies</h2>
+  <input [(ngModel)]="searchKeyword" placeholder="Enter keyword" />
+  <div><button (click)="searchOMDBMovies(searchKeyword)">Search</button>
+    
+  <button class="back-button" (click)="goBack()">Back</button></div>
+
+  <ul *ngIf="omdbMovies.length">
+    <li *ngFor="let movie of omdbMovies">
+      {{ movie.title }} ({{ movie.year }})
+    </li>
+  </ul>
+  <div *ngIf="errorMessage" class="error-message">
+  {{errorMessage}}
+  </div>
+</div>

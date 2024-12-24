@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h2 class="text-center">User Dashboard</h2>
+
+  <li
+  class="list-group-item d-flex justify-content-between align-items-center"
+  *ngFor="let movie of paginatedMovies"
+>
+  {{ movie.title }}
+  <button
+    class="btn btn-primary btn-sm"
+    [routerLink]="['/movie-details', movie.id]"
+  >
+    View Details
+  </button>
+</li>
+
+        <div class="col-md-12 mt-3 d-flex justify-content-between logout-container">
+          <button 
+            class="btn btn-secondary logout-button"
+            [disabled]="currentPage === 0"
+            (click)="previousPage()"
+          >
+            Previous
+          </button>
+          
+          <button
+            class="btn btn-secondary logout-button"
+            [disabled]="currentPage === totalPages - 1"
+            (click)="nextPage()"
+          >
+            Next
+          </button>
+        </div>
+<div><p>           </p></div>
+            <div class="logout-container">
+            <button class="btn btn-secondary logout-button"
+            (click)="logout()">Loout</button>
+            </div>
+
+
+</div>

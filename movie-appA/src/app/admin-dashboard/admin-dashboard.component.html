@@ -1,0 +1,35 @@
+
+<div class="container">
+  <h2>Admin Dashboard</h2>
+
+  <div class="actions">
+    <button (click)="logout()">Logout</button>
+    <button (click)="redirectToAddMovie()">Add New Movie</button>
+    <button (click)="redirectToSearchOMDB()">Search OMDB Movies</button>
+  </div>
+
+  <div *ngIf="showAllMovies">
+    <h3>Movies in Database</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>IMDB Rating</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let movie of databaseMovies">
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.imdbRating }}</td>
+        <td>
+          <button (click)="deleteMovie(movie.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+   <div *ngIf="errorMessage" class="error-message">
+    {{errorMessage}}
+</div>
+</div>

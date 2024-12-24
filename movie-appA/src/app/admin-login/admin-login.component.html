@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Login</h2>
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+  <form class="row form-group" (ngSubmit)="onAdminLogin()" enctype="multipart/form-data" [formGroup]="loginForm" >
+      <div class="mb-2 col-md-6">
+          <input [class.is-valid]="!loginForm.controls['email'].errors" type="email" formControlName="email"
+              class="form-control main bg-transparent " name="email"
+              placeholder="Email" required>
+              <div class="mt-20" *ngIf="loginForm.controls['email'].errors  &&
+              (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+                <small *ngIf="loginForm.controls['email'].errors?.['required']"  
+                class="form-text text-danger">required</small>
+                <small *ngIf="loginForm.controls['email'].errors?.['email']"  
+                class="form-text text-danger">should be valid email </small>
+              </div>
+      </div>
+      <div class="mb-2 col-md-6">
+          <input [class.is-valid]="!loginForm.controls['password'].errors" type="password" formControlName="password"
+              class="form-control main bg-transparent " name="password" placeholder="Password"
+              required>
+              <div class="mt-20" *ngIf="loginForm.controls['password'].errors && 
+              (loginForm.controls['password'].touched||  loginForm.controls['password'].dirty)">
+                <small *ngIf="loginForm.controls['password'].errors?.['required']"  
+                class="form-text text-danger">required</small>
+                <small *ngIf="loginForm.controls['password'].errors?.['maxlength']"  
+                class="form-text text-danger">Max Length is 20</small>
+                <small *ngIf="loginForm.controls['password'].errors?.['minlength']"  
+                class="form-text text-danger">Min Length is 5</small>
+              </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="loading">
+       <span *ngIf="!loading">Login</span>
+        <span *ngIf="loading">Loging in...</span>
+        Admin Login
+     </button>
+      <!-- <div class="mt-5 col-9 w-60">
+          <label class="">Have an account</label>
+          <button routerLink="/register"
+              class="col-4 orange-hover btn btn-white btn-white-md ">Register</button>
+      </div> -->
+  </form>
+</div>
