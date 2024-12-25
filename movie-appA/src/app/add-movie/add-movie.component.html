@@ -1,38 +1,45 @@
+<div class="container">
+  <h2>Add New Movie</h2>
+  <form (ngSubmit)="submitForm()" [formGroup]="addMovieForm">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" class="form-control" />
+      <div *ngIf="addMovieForm.controls['title'].invalid && addMovieForm.controls['title'].touched" class="error">
+        Title is required (3-20 characters).
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" formControlName="genre" class="form-control" />
+      <div *ngIf="addMovieForm.controls['genre'].invalid && addMovieForm.controls['genre'].touched" class="error">
+        Genre is required.
+      </div>
+    </div>
 
-  <div class="container">
-    <h2>Add New Movie</h2>
-    <form (ngSubmit)="submitForm()">
-         <div class="form-group">
-            <label for="title">Title:</label>
-        <input type="text" id="title"  >
-        </div>
-         <div class="form-group">
-            <label for="genre">Genre:</label>
-           <input type="text" id="genre" >
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-           <input type="text" id="description" >
-        </div>
-        <div class="form-group">
-            <label for="imdbRating">IMDB Rating:</label>
-          <select type="number" id="imdbRating" >
-          <option value="0">0</option>
-         <option value="1">1</option>
-          <option value="2">2</option>
-         <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-         <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-        </div>
-      <div> <button class="add-movie-button" type="submit">Add Movie</button>
-       <button class="back-button" (click)="goBack()">Back</button></div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+      <div *ngIf="addMovieForm.controls['description'].invalid && addMovieForm.controls['description'].touched" class="error">
+        Description is required (3-200 characters).
+      </div>
+    </div>
 
-   </form>
+    <div class="form-group">
+      <label for="imdbRating">IMDB Rating:</label>
+      <select id="imdbRating" formControlName="imdbRating" class="form-control">
+        <option *ngFor="let rating of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [value]="rating">{{ rating }}</option>
+      </select>
+      <div *ngIf="addMovieForm.controls['imdbRating'].invalid && addMovieForm.controls['imdbRating'].touched" class="error">
+        Please select a valid IMDB rating (0-10).
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="add-movie-button" [disabled]="addMovieForm.invalid">Add Movie</button>
+      <button type="button" class="back-button" (click)="goBack()">Back</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
 </div>
