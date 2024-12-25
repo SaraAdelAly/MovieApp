@@ -70,4 +70,25 @@ Here's a list of the key API endpoints:
 4.  Use the available endpoints by clicking on their respective actions.
 
 
+![Screenshot 2024-12-24 181934](https://github.com/user-attachments/assets/9bda6f6c-ba73-42e6-8f0c-8fe3e2396158)
+
+
+![Screenshot 2024-12-24 183413](https://github.com/user-attachments/assets/ffbb1d6f-5cb1-4d88-8ba8-c249a5480d15)
+
+
+![Screenshot 2024-12-24 183426](https://github.com/user-attachments/assets/a8ca0ae7-6649-490a-b149-424909777b2e)
+
+
+![Screenshot 2024-12-25 162955](https://github.com/user-attachments/assets/9a048ace-223b-4d37-b8a8-8fb165cfdcc9)
+
+
+![Screenshot 2024-12-24 183433](https://github.com/user-attachments/assets/faf6f51e-b7a4-4a71-a1a5-513838a654a5)
+
+
+
+
+
+
+
+
 
