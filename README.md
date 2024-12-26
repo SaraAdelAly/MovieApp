@@ -24,14 +24,15 @@ This project consists of a frontend application built with Angular and a backend
 
 ### Frontend (Angular)
 
+![Screenshot 2024-12-24 205851](https://github.com/user-attachments/assets/562e35a5-37ce-4a5d-9726-a296d8fc6487)
 
-![image](https://github.com/user-attachments/assets/b5eabc0b-5725-427c-be8e-2532d0213341)
 
 
 
 ### Backend (Spring Boot)
 
-![image](https://github.com/user-attachments/assets/15339e63-04d7-4871-bc2e-9ab030871c4f)
+![Screenshot 2024-12-24 205839](https://github.com/user-attachments/assets/342cfb3e-1343-4641-b637-a68552c48a58)
+
 
 
 
